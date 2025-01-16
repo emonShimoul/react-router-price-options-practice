@@ -1,6 +1,10 @@
+import { useState } from "react";
 import Link from "../Link/Link";
+import { AiOutlineMenu } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
 
 const NavBar = () => {
+  const [open, setOpen] = useState(false);
   const routes = [
     { id: 1, path: "/", name: "Home" },
     { id: 2, path: "/about", name: "About" },
@@ -10,6 +14,13 @@ const NavBar = () => {
   ];
   return (
     <nav>
+      <div className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
+        {open === true ? (
+          <AiOutlineMenu></AiOutlineMenu>
+        ) : (
+          <IoMdClose></IoMdClose>
+        )}
+      </div>
       <ul className="flex">
         {routes.map((route) => (
           <Link key={route.id} route={route}></Link>
