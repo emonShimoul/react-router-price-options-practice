@@ -13,7 +13,7 @@ const NavBar = () => {
     { id: 5, path: "/profile/:id", name: "Profile" },
   ];
   return (
-    <nav>
+    <nav className="text-black p-6 bg-yellow-200">
       <div className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
         {open === true ? (
           <AiOutlineMenu></AiOutlineMenu>
@@ -21,7 +21,7 @@ const NavBar = () => {
           <IoMdClose></IoMdClose>
         )}
       </div>
-      <ul className="flex">
+      <ul className="md:flex absolute bg-yellow-200 px-6">
         {routes.map((route) => (
           <Link key={route.id} route={route}></Link>
         ))}
