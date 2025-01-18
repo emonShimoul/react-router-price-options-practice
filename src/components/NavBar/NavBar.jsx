@@ -16,14 +16,14 @@ const NavBar = () => {
     <nav className="text-black p-6 bg-yellow-200">
       <div className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
         {open === true ? (
-          <AiOutlineMenu></AiOutlineMenu>
-        ) : (
           <IoMdClose></IoMdClose>
+        ) : (
+          <AiOutlineMenu></AiOutlineMenu>
         )}
       </div>
       <ul
-        className={`md:flex absolute bg-yellow-200 px-6 shadow-lg ${
-          open ? "" : "hidden"
+        className={`md:flex duration-1000 absolute bg-yellow-200 px-6 shadow-lg ${
+          open ? "top-16" : "-top-60"
         }`}
       >
         {routes.map((route) => (
