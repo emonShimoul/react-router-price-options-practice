@@ -21,7 +21,11 @@ const NavBar = () => {
           <IoMdClose></IoMdClose>
         )}
       </div>
-      <ul className="md:flex absolute bg-yellow-200 px-6">
+      <ul
+        className={`md:flex absolute bg-yellow-200 px-6 shadow-lg ${
+          open ? "" : "hidden"
+        }`}
+      >
         {routes.map((route) => (
           <Link key={route.id} route={route}></Link>
         ))}
